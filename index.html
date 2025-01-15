@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Iron Wolf Learning Academy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+	</head>
+	<body class="is-preload landing">
+		
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<!--
+					<h1 id="logo"><a href="index.html">Landed</a></h1>
+					<nav id="nav">
+						<ul>
+							
+						
+							
+								<li><a href="index.html">Home</a></li>
+						
+
+							<li>
+								
+							
+								<a href="#">Layouts</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li>
+
+									
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="elements.html">Elements</a></li>
+							<li><a href="#" class="button primary">Sign Up</a></li>
+						</ul>
+					</nav>
+					-->
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>IRON WOLF LEARNING ACADEMY</h2>
+							<p>Guardian Of The Digital Wilderness</p>
+						</header>
+						<span class="image"><img src="logo1.png" alt="" /></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">Next</a>
+				</section>
+				<style>
+					.image {
+					  display: inline-block; /* Ensures it behaves like an inline element */
+					  width: 100px; /* Set the desired width for the container */
+					  height: 100px; /* Set the desired height for the container */
+					  overflow: hidden; /* Ensures anything overflowing is hidden */
+					}
+				  
+					.image img {
+					  width: 100%; /* Makes the image fit the width of the container */
+					  height: 100%; /* Makes the image fit the height of the container */
+					  object-fit: cover; /* Ensures the image fills the space without distortion */
+					}
+				  </style>
+
+			<!-- One -->
+				<section id="one" class="spotlight style1 bottom">
+					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+					<div class="content">
+						<div class="container">
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<header>
+										<h2>About Us</h2>
+										<p></p>
+									</header>
+								</div>
+								<div class="col-4 col-12-medium">
+									<p>Iron Wolf Academy is dedicated to empowering individuals 
+										with essential skills in cybersecurity and English, 
+										preparing them for the ever-changing challenges of the digital world.</p>
+								</div>
+								<div class="col-4 col-12-medium">
+									<p>Our mission is to bridge the gap between technical expertise and 
+										language proficiency, providing a comprehensive learning experience for all.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+						  <h2>English Language Courses</h2>
+						</header>
+						<p><strong>Basic English for Beginners:</strong> Focus on foundational language skills including grammar, vocabulary, and sentence structure.</p>
+						<p><strong>Advanced English for Professionals:</strong> Enhance your business communication skills, writing, and presentation techniques.</p>
+						<p><strong>Technical English for Cybersecurity:</strong> Learn the specific terms and concepts needed to communicate effectively in cybersecurity.</p>
+						<p><strong>Conversational English:</strong> Practice speaking and listening with a focus on everyday interactions and professional settings.</p>
+						<ul class="actions">
+						  <li><a href="#" id="learnMoreEnglish" class="button">Learn More</a></li>
+						</ul>
+					  </div>
+					  
+					 <!-- New Popup for English Language Courses -->
+<div id="overlayEnglish"></div>
+<div id="popupEnglish">
+  <h2>English Language Course Information</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Class Name</th>
+        <th>Time</th>
+        <th>Class ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>COM101</td>
+        <td>10AM - 11AM</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>COM102</td>
+        <td>11:10AM - 12:10PM</td>
+        <td>200</td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="closePopupEnglish">Close</button>
+</div>
+
+<script>
+  // JavaScript for English Language Popup
+  const learnMoreEnglishButton = document.getElementById('learnMoreEnglish'); // Ensure this button exists
+  const popupEnglish = document.getElementById('popupEnglish');
+  const closePopupEnglishButton = document.getElementById('closePopupEnglish');
+  const overlayEnglish = document.getElementById('overlayEnglish');
+
+  // Ensure the popup shows up when the 'learnMoreEnglish' button is clicked
+  learnMoreEnglishButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    popupEnglish.style.display = 'block';
+    overlayEnglish.style.display = 'block';
+  });
+
+  // Close the popup when 'close' button is clicked
+  closePopupEnglishButton.addEventListener('click', () => {
+    popupEnglish.style.display = 'none';
+    overlayEnglish.style.display = 'none';
+  });
+
+  // Close the popup when clicking outside the popup area
+  overlayEnglish.addEventListener('click', () => {
+    popupEnglish.style.display = 'none';
+    overlayEnglish.style.display = 'none';
+  });
+</script>
+
+<style>
+  /* General Popup Styling */
+  #popupEnglish {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(206, 184, 184, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    overflow: auto; /* Ensures content is not cut off */
+  }
+
+  /* Table Styling */
+  #popupEnglish table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  #popupEnglish table th,
+  #popupEnglish table td {
+    border: 1px solid #ae0a0a;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #popupEnglish table th {
+    background-color: #2c2929;
+    color: white; /* Ensures header text is visible */
+  }
+
+  #popupEnglish table td {
+    color: black; /* Ensures table data text is visible */
+  }
+
+  /* Close Button Styling */
+  #popupEnglish #closePopupEnglish {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: rgb(13, 13, 13);
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #popupEnglish #closePopupEnglish:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  /* Overlay Styling */
+  #overlayEnglish {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+</style>
+
+  
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+			
+					<div class="content">
+						<header>
+						  <h2>English Language Courses</h2>
+						</header>
+						<p><strong>Basic English for Beginners:</strong> Focus on foundational language skills including grammar, vocabulary, and sentence structure.</p>
+						<p><strong>Advanced English for Professionals:</strong> Enhance your business communication skills, writing, and presentation techniques.</p>
+						<p><strong>Technical English for Cybersecurity:</strong> Learn the specific terms and concepts needed to communicate effectively in cybersecurity.</p>
+						<p><strong>Conversational English:</strong> Practice speaking and listening with a focus on everyday interactions and professional settings.</p>
+						<ul class="actions">
+						  <li><a href="#" id="learnMore" class="button">Learn More</a></li>
+						</ul>
+					  </div>
+					  
+					  <!-- Popup -->
+					  <div id="overlay"></div>
+					  <div id="popup">
+						<h2>Class Information</h2>
+						<table>
+						  <thead>
+							<tr>
+							  <th>Class Name</th>
+							  <th>Time</th>
+							  <th>Class ID</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr>
+							  <td>ENG101</td>
+							  <td>7AM - 8AM</td>
+							  <td>001</td>
+							</tr>
+							<tr>
+							  <td>ENG102</td>
+							  <td>8:10AM - 9:10AM</td>
+							  <td>002</td>
+							</tr>
+
+						  </tbody>
+						</table>
+						<button id="closePopup">Close</button>
+					  </div>
+					  
+					  <script>
+						// JavaScript to handle popup functionality
+						const learnMoreButton = document.getElementById('learnMore');
+						const popup = document.getElementById('popup');
+						const closePopupButton = document.getElementById('closePopup');
+						const overlay = document.getElementById('overlay');
+					  
+						learnMoreButton.addEventListener('click', (e) => {
+						  e.preventDefault(); // Prevent link default behavior
+						  popup.style.display = 'block';
+						  overlay.style.display = 'block';
+						});
+					  
+						closePopupButton.addEventListener('click', () => {
+						  popup.style.display = 'none';
+						  overlay.style.display = 'none';
+						});
+					  
+						overlay.addEventListener('click', () => {
+						  popup.style.display = 'none';
+						  overlay.style.display = 'none';
+						});
+					  </script>
+					  
+					  <style>
+						/* Popup styling */
+						#popup {
+						  display: none;
+						  position: fixed;
+						  top: 50%;
+						  left: 50%;
+						  transform: translate(-50%, -50%);
+						  width: 80%;
+						  max-width: 600px;
+						  background-color: rgb(255, 255, 255);
+						  border: 1px solid #ccc;
+						  box-shadow: 0 4px 8px rgba(206, 184, 184, 0.2);
+						  z-index: 1000;
+						  padding: 20px;
+						}
+					  
+						#popup table {
+						  width: 100%;
+						  border-collapse: collapse;
+						}
+					  
+						#popup table th,
+						#popup table td {
+						  border: 1px solid #ae0a0a;
+						  padding: 8px;
+						  text-align: left;
+						}
+					  
+						#popup table th {
+						  background-color: #2c2929;
+						}
+					  
+						#popup #closePopup {
+						  margin-top: 10px;
+						  display: inline-block;
+						  padding: 8px 12px;
+						  background-color: #007bff;
+						  color: rgb(13, 13, 13);
+						  text-align: center;
+						  border: none;
+						  border-radius: 4px;
+						  cursor: pointer;
+						}
+					  
+						#overlay {
+						  display: none;
+						  position: fixed;
+						  top: 0;
+						  left: 0;
+						  width: 100%;
+						  height: 100%;
+						  background: rgba(0, 0, 0, 0.5);
+						  z-index: 999;
+						}
+						<style>
+
+                          /* Add this fix */
+                         #popup table th {
+                          background-color: #0b0b0b;
+                          color: white; /* Ensures text in the header is visible */
+                       }
+
+                         #popup table td {
+                          color: black; /* Ensures table data text is visible */
+                       }
+                        </style>
+
+					  </style>
+					  
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Four -->
+			<!-- Contact Form Section -->
+<section id="four" class="wrapper style2 special fade">
+    <div class="container">
+        <header class="major">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us, and we'll get back to you as soon as possible!</p>
+        </header>
+        <form id="contact-form" method="post">
+            <div class="row gtr-uniform gtr-50">
+                <div class="col-6 col-12-xsmall">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" id="name" placeholder="Your Full Name" required />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="Your Email Address" required />
+                </div>
+                <div class="col-12">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" placeholder="Write your message here..." rows="4" required></textarea>
+                </div>
+                <div class="col-12">
+                    <input type="submit" value="Send Message" class="fit primary" />
+                </div>
+            </div>
+        </form>
+        <!-- Add a status message container -->
+        <div id="status-message" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
+    </div>
+</section>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Store form reference
+    const form = $('#contact-form');
+    const statusMessage = $('#status-message');
+
+    form.on('submit', function(event) {
+        event.preventDefault(); // Prevent page reload
+
+        // Collect form data
+        const formData = $(this).serialize();
+
+        // Disable submit button to prevent double submission
+        const submitButton = form.find('input[type="submit"]');
+        submitButton.prop('disabled', true);
+
+        // Show loading state
+        statusMessage
+            .html('Sending message...')
+            .css({
+                'display': 'block',
+                'background-color': '#f0f0f0',
+                'color': '#333'
+            });
+
+        $.ajax({
+            url: 'submit_form.php',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                statusMessage
+                    .html('Message sent successfully!')
+                    .css({
+                        'background-color': '#dff0d8',
+                        'color': '#3c763d'
+                    });
+                form[0].reset(); // Reset form after success
+            },
+            error: function() {
+                statusMessage
+                    .html('Something went wrong. Please try again.')
+                    .css({
+                        'background-color': '#f2dede',
+                        'color': '#a94442'
+                    });
+            },
+            complete: function() {
+                // Re-enable submit button
+                submitButton.prop('disabled', false);
+
+                // Hide status message after 5 seconds
+                setTimeout(function() {
+                    statusMessage.fadeOut();
+                }, 5000);
+            }
+        });
+
+        return false; // Ensure the form doesn't submit traditionally
+    });
+});
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back to Top Button</title>
+  <style>
+    /* Body styling for demo */
+    body {
+      font-family: Arial, sans-serif;
+      height: 2000px; /* To create scrollable content */
+      margin: 0;
+    }
+
+    /* Styling for the 'Go Back to Top' button */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px; /* Position it 20px from the bottom */
+      right: 20px;  /* Position it 20px from the right */
+      background-color: #1b1c1e; /* Blue background */
+      color: rgb(194, 14, 14); /* White text */
+      border: none;
+      padding: 10px 20px; /* Padding for the button */
+      border-radius: 5px; /* Round corners */
+      font-size: 16px; /* Font size */
+      cursor: pointer; /* Change the cursor to a pointer */
+      z-index: 1000; /* Ensure it stays on top of other content */
+      display: none; /* Initially hide the button */
+    }
+
+    #backToTopBtn:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <!-- 'Go Back to Top' Button -->
+  <button id="backToTopBtn">Go Back to Top</button>
+
+  <script>
+    // JavaScript to handle the button visibility and scroll action
+    const backToTopButton = document.getElementById("backToTopBtn");
+
+    // Show the button when scrolled to the bottom of the page
+    window.onscroll = function () {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        backToTopButton.style.display = "block"; // Show the button when at bottom
+      } else {
+        backToTopButton.style.display = "none"; // Hide it when not at the bottom
+      }
+    };
+
+    // Scroll back to the top when the button is clicked
+    backToTopButton.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
+
+		
+			
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://chat.whatsapp.com/H95OCHU5XPNFUEqyBvfH0G" target="_blank" 
+					rel="noopener noreferrer" class="icon brands alt fa-whatsapp"><span  class="label">whatsapp</span></a></li>
+				<li><a href="#" target="_blank" 
+					rel="noopener noreferrer" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="https://www.instagram.com/iron_wolf_guardian/"  target="_blank" 
+					rel="noopener noreferrer" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://t.me/ironwolfacademy" target="_blank" 
+					rel="noopener noreferrer" class="icon brands alt fa-telegram"><span class="label">Telegram</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; IWA. All rights reserved.</li><li>Design: <a href="#">Iron Wolf Academy</a></li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    input {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Class Schedule</h2>
+
+  <table id="classTable">
+    <thead>
+      <tr>
+        <th>Class Name</th>
+        <th>Class Time</th>
+        <th>Class ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Math</td>
+        <td>8:00 AM</td>
+        <td>101</td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td>10:00 AM</td>
+        <td>102</td>
+      </tr>
+      <tr>
+        <td>History</td>
+        <td>1:00 PM</td>
+        <td>103</td>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>3:00 PM</td>
+        <td>104</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Add Rows or Columns</h3>
+  <form onsubmit="addRow(event)">
+    <label>
+      Class Name: <input type="text" id="className" required>
+    </label>
+    <label>
+      Class Time: <input type="text" id="classTime" required>
+    </label>
+    <label>
+      Class ID: <input type="text" id="classID" required>
+    </label>
+    <button type="submit">Add Row</button>
+  </form>
+
+  <form onsubmit="addColumn(event)">
+    <label>
+      Column Name: <input type="text" id="columnName" required>
+    </label>
+    <button type="submit">Add Column</button>
+  </form>
+
+  <script>
+    // Function to add a new row
+    function addRow(event) {
+      event.preventDefault();
+      const table = document.getElementById('classTable').querySelector('tbody');
+      const className = document.getElementById('className').value;
+      const classTime = document.getElementById('classTime').value;
+      const classID = document.getElementById('classID').value;
+
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `<td>${className}</td><td>${classTime}</td><td>${classID}</td>`;
+      table.appendChild(newRow);
+
+      // Clear input fields
+      document.getElementById('className').value = '';
+      document.getElementById('classTime').value = '';
+      document.getElementById('classID').value = '';
+    }
+
+    // Function to add a new column
+    function addColumn(event) {
+      event.preventDefault();
+      const table = document.getElementById('classTable');
+      const columnName = document.getElementById('columnName').value;
+
+      // Add column to header
+      const headerRow = table.querySelector('thead tr');
+      const newHeader = document.createElement('th');
+      newHeader.textContent = columnName;
+      headerRow.appendChild(newHeader);
+
+      // Add empty cells to all existing rows
+      const rows = table.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const newCell = document.createElement('td');
+        newCell.textContent = ''; // Empty by default
+        row.appendChild(newCell);
+      });
+
+      // Clear input field
+      document.getElementById('columnName').value = '';
+    }
+  </script>
+</body>
+</html>
